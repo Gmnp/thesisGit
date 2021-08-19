@@ -1,0 +1,21 @@
+\texttt{bent\_beam (2)} &9.77e-02 &6.90e-02 &1.38e-01 &1.19e-01 &1.14e-01\\
+\texttt{buckling\_plate (12)} &3.93e-02 &6.10e-02 &6.03e-02 &1.13e-01 &5.82e-02\\
+\texttt{canyon\_particle (15)} &6.67e+00 &\rc 3.00e+01 &1.52e-01 &3.37e-01 &1.33e-01\\
+\texttt{clamped\_beam\_1d (101)} &\rc 2.04e+01 &\rc 1.52e+02 &4.09e-01 &1.09e+00 &4.30e-01\\
+\texttt{distributed\_delay1 (2)} &3.52e-01 &1.97e-01 &1.85e-01 &1.85e-01 &1.88e-01\\
+\texttt{hadeler (14)} &9.70e+00 &8.21e+00 &1.06e+00 &1.67e+00 &1.07e+00\\
+\texttt{loaded\_string (9)} &2.58e-01 &1.14e-01 &9.11e-01 &1.08e+00 &9.98e-01\\
+\texttt{nep1 (6)} &3.13e-02 &4.32e-02 &3.86e-02 &6.75e-02 &3.64e-02\\
+\texttt{nep2 (4)} &3.98e-02 &3.45e-02 &4.18e-02 &6.14e-02 &4.27e-02\\
+\texttt{nep3 (14)} &4.23e-02 &6.45e-02 &7.28e-02 &1.29e-01 &5.59e-02\\
+\texttt{neuron\_dde (11)} &3.86e-02 &4.53e-02 &8.51e-02 &1.44e-01 &6.58e-02\\
+\texttt{pdde\_symmetric (59)} &3.41e+00 &\rc 1.94e+01 &6.93e-01 &1.23e+00 &7.16e-01\\
+\texttt{photonic\_crystal (28)} &\rc 5.70e+01 &\rc 1.51e+02 &5.86e+00 &7.51e+00 &6.42e+00\\
+\texttt{pillbox\_small (1)} &\rc 3.13e+01 &\rc 8.27e+01 &5.36e-02 &7.23e-02 &4.40e-02\\
+\texttt{railtrack2\_rep (53)} &\rc 1.18e+03 &\rc 2.97e+02 &\rc 7.14e+01 &\rc 8.13e+01 &\rc 6.57e+01\\
+\texttt{railtrack\_rep (2)} &\rc 3.71e+02 &\rc 7.26e+01 &\rc 1.52e+01 &\rc 4.57e+01 &\rc 4.05e+01\\
+\texttt{schrodinger\_abc (6)} &6.24e-02 &1.11e-01 &9.80e-02 &1.17e-01 &8.80e-02\\
+\texttt{square\_root (3)} &9.30e-02 &1.21e-01 &2.20e-01 &3.25e-01 &2.04e-01\\
+\texttt{time\_delay (8)} &1.80e-02 &1.44e-02 &5.56e-02 &9.54e-02 &5.61e-02\\
+\texttt{time\_delay2 (11)} &2.08e-02 &1.72e-02 &5.68e-02 &1.22e-01 &5.37e-02\\
+\texttt{time\_delay3 (38)} &5.43e-02 &5.36e-02 &8.05e-02 &2.17e-01 &6.62e-02\\
