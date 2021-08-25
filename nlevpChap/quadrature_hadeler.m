@@ -1,3 +1,6 @@
+clear Evs;
+clear Evecs;
+clear residss;
 [coeffs,fun,F] = nlevp('hadeler', 30);
 rng(2)
 F = @(z) full(F(z));

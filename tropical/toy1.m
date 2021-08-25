@@ -1,7 +1,4 @@
-% Script to produce a very easy toy example: Newton polygon of the
-% polynomial [1e-70 0 0 0 1e39 1e3 1e10 1e40] plus the holomorphic function
-% in A(1,a) (1-a)/((z-1)(z-a)), where a = 1e28.
-
+% Script to produce a very easy toy example
 n = -4; m = 4;
 jn = [n:-1];
 jp = [0:m];

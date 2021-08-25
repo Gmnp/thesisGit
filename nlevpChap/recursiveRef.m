@@ -108,5 +108,5 @@ mypdf('elbow', 0.7,2)
 figure(4)
 hold off
 plot(b_evs, 'o')
-axis([0.5, 2.5, -0.2, 2.7])
+%axis([0.5, 2.5, -0.2, 2.7])
 mypdf('clusters', 0.7,2)
