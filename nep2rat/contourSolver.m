@@ -136,7 +136,7 @@ function [evs, evecs, resids, info] = contourSolver(F, gam, rad, varargin)
 
 
 %% EC code
-expQuad = 1;
+expQuad = 0;
 % %%
 
 if nargout > 4
