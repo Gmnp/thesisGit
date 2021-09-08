@@ -204,12 +204,12 @@ if isequal(method, 'std')
     w4 = exp(1i*theta4);
     z2 = gam +rad*w2;
     z4 = gam + rad*w4;
-    lupoints2 = lufact(F, nc2, z2);
-    lupoints4 = lufact(F, nc4, z4);
+    lupoints2 = iLUfact(F, nc2, z2);
+    lupoints4 = iLUfact(F, nc4, z4);
     Pspace2 = zeros(0,0,nc2);
-    Pspace2 = computeProSpace(lupoints2, n, nc2, V, Pspace2);
+    Pspace2 = iComputeProSpace(lupoints2, n, nc2, V, Pspace2);
     Pspace4 = zeros(0,0,nc4);
-    Pspace4 = computeProSpace(lupoints4, n, nc4, V, Pspace4);
+    Pspace4 = iComputeProSpace(lupoints4, n, nc4, V, Pspace4);
     % End EC
     if ~GK
         Moms = iComputeMoments(Pspace, w, str, rot, nc, 0, 2*M, rad);
@@ -539,8 +539,8 @@ elseif isequal(method, 'loewner')
     w4 = exp(1i*theta4);
     z2 = gam +rad*w2;
     z4 = gam + rad*w4;
-    lupoints2 = lufact(F, nc2, z2);
-    lupoints4 = lufact(F, nc4, z4);
+    lupoints2 = iLUfact(F, nc2, z2);
+    lupoints4 = iLUfact(F, nc4, z4);
     %% End EC
     nLoewPoints = length(lData.points)/2;
     lDir = lData.dir(:,1:nLoewPoints); %left directions
@@ -856,12 +856,12 @@ if nargin == 12
                 + 1i*str*cos(rot)*sin(newPoints2);
             zz1 = rad*newPoints1Ellipse + gam;
             zz2 = rad*newPoints2Ellipse + gam;
-            lupoints = lufact(F,nc,zz1);
-            aux1.Prospace = computeProSpace(lupoints, n, nc, V, []);
-            [~,aux1.ProspacePerm] = computeProSpace(lupoints, n ,nc, V1, aux1.Prospace);
-            lupoints = lufact(F,nc,zz2);
-            aux2.Prospace = computeProSpace(lupoints, n, nc, V, []);
-            [~,aux2.ProspacePerm] = computeProSpace(lupoints, n ,nc, V1, aux2.Prospace);
+            lupoints = iLUfact(F,nc,zz1);
+            aux1.Prospace = iComputeProSpace(lupoints, n, nc, V, []);
+            [~,aux1.ProspacePerm] = iComputeProSpace(lupoints, n ,nc, V1, aux1.Prospace);
+            lupoints = iLUfact(F,nc,zz2);
+            aux2.Prospace = iComputeProSpace(lupoints, n, nc, V, []);
+            [~,aux2.ProspacePerm] = iComputeProSpace(lupoints, n ,nc, V1, aux2.Prospace);
             integralPoints(end+1:end+2) = {aux1 aux2};
             integralPoints{j}.used = 0;
         end
@@ -973,10 +973,10 @@ else
                 + 1i*str*cos(rot)*sin(newPoints2);
             zz1 = rad*newPoints1Ellipse + gam;
             zz2 = rad*newPoints2Ellipse + gam;
-            lupoints = lufact(F,nc,zz1);
-            aux1.Prospace = computeProSpace(lupoints, n, nc, V, []);
-            lupoints = lufact(F,nc,zz2);
-            aux2.Prospace = computeProSpace(lupoints, n, nc, V, []);
+            lupoints = iLUfact(F,nc,zz1);
+            aux1.Prospace = iComputeProSpace(lupoints, n, nc, V, []);
+            lupoints = iLUfact(F,nc,zz2);
+            aux2.Prospace = iComputeProSpace(lupoints, n, nc, V, []);
             integralPoints(end+1:end+2) = {aux1 aux2};
             % We set that the interval j is not used
             integralPoints{j}.used = 0;
@@ -1115,7 +1115,7 @@ end
 
 function [lupoints, normF] = iLUfact(F, nc, z)
 
-% lupoints = LUFACT(F, nc, z) is an auxiliary function for
+% [lupoints, normF] = LUFACT(F, nc, z) is an auxiliary function for
 % CONTOURSOLVER.
 %
 % INPUT
@@ -1129,6 +1129,7 @@ function [lupoints, normF] = iLUfact(F, nc, z)
 % - lupoints: is a cell of nc structures containing the
 % decomposition of F(z(k)). We used the command decompose, which is
 % available since MATLAB R2017b.
+% - normF: is max_k ||F(z(k)||, where ||.|| is the Frobenius norm.
 
 lupoints = cell(1, nc);
 normF = 0;
