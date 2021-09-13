@@ -397,6 +397,6 @@ n = length(Evs);
 resids = zeros(1,n);
 alphas = cellfun(@(z) norm(z, 'fro'), Fw.coeffs);
 for j = 1:n
-  resids(j) = norm(F(Evs(j))*Evecs(:,j))/(alphas*abs(Fw.fun(Evs(j)))')
+  resids(j) = norm(F(Evs(j))*Evecs(:,j))/(alphas*abs(Fw.fun(Evs(j)))');
 end 
 end
